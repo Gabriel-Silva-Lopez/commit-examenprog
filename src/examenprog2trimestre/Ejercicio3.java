@@ -10,23 +10,31 @@ public class Ejercicio3 {
 	public static void informacionVideojuegos(String nombre) {
 		File file = new File(nombre);
 		try {
+			ArrayList<String> l = new ArrayList<String>();
 			Scanner f = new Scanner(file);
 			while(f.hasNextLine()){
-				ArrayList<String> plataformas = new ArrayList<String>();
 				String linea = f.nextLine();
-				String[] separador = linea.split(",");
+				String[] lSep = linea.split(",");
+				String pegado = "";
 				boolean empiezo = false;
-				if(empiezo) {
-					for(int i = 0; i < linea.length(); i++) {
-						if(separador[i].contains("\"")) {
-							separador[i] = separador[i] + separador[i+1];
-							System.out.println(separador[i]);
+				for(int i = 0; i < lSep.length; i++) {
+					if(empiezo) {
+						if(!lSep[i].equals("") && Character.toString(lSep[i].charAt(lSep[i].length() - 1)).
+								equalsIgnoreCase("\"") &&
+								Character.toString(lSep[i+1].charAt(0)).equalsIgnoreCase("\"")) {
+							
 						}
-					}				
-				} else {
-						empiezo = true;
+					} else if(!lSep[i].equals("") && !Character.toString(lSep[i].charAt(lSep[i].length() - 1)).
+								equalsIgnoreCase("\"") &&
+								Character.toString(lSep[i+2].charAt(0)).equalsIgnoreCase("\"")) {
+						} else {
+							l.add(lSep[i]);
+							
+						}
 					}
+					System.out.println(lSep[i]);
 				}
+			}
 
 			f.close();
 		} catch(FileNotFoundException e) {

@@ -8,14 +8,17 @@ public class Jugador {
 	private int calidadporteria;
 	private int vidas;
 	private boolean portero;
+	private boolean disparador;
 	
-	public Jugador(String nombre, int dorsal, int potenciadisparo, int calidadporteria, int vidas, boolean portero) {
+	public Jugador(String nombre, int dorsal, int potenciadisparo, int calidadporteria, int vidas, boolean portero,
+			boolean disparador) {
 		this.nombre = nombre;
 		this.dorsal = dorsal;
 		this.potenciadisparo = potenciadisparo;
 		this.calidadporteria = calidadporteria;
 		this.vidas = vidas;
 		this.portero = portero;
+		this.disparador = disparador;
 	}
 
 	public String getNombre() {
@@ -64,6 +67,14 @@ public class Jugador {
 
 	public void setPortero(boolean portero) {
 		this.portero = portero;
+	}
+
+	public boolean getDisparador() {
+		return disparador;
+	}
+
+	public void setDisparador(boolean disparador) {
+		this.disparador = disparador;
 	}
 	
 }
