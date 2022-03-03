@@ -7,13 +7,15 @@ public class Jugador {
 	private int potenciadisparo;
 	private int calidadporteria;
 	private int vidas;
+	private boolean portero;
 	
-	public Jugador(String nombre, int dorsal, int potenciadisparo, int calidadporteria, int vidas) {
+	public Jugador(String nombre, int dorsal, int potenciadisparo, int calidadporteria, int vidas, boolean portero) {
 		this.nombre = nombre;
 		this.dorsal = dorsal;
 		this.potenciadisparo = potenciadisparo;
 		this.calidadporteria = calidadporteria;
 		this.vidas = vidas;
+		this.portero = portero;
 	}
 
 	public String getNombre() {
@@ -54,6 +56,14 @@ public class Jugador {
 
 	public void setVidas(int vidas) {
 		this.vidas = vidas;
+	}
+	
+	public boolean getPortero() {
+		return portero;
+	}
+
+	public void setPortero(boolean portero) {
+		this.portero = portero;
 	}
 	
 }
