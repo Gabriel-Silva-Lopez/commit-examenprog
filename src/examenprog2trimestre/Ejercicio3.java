@@ -15,7 +15,6 @@ public class Ejercicio3 {
 			while(f.hasNextLine()){
 				String linea = f.nextLine();
 				String[] lSep = linea.split(",");
-				String pegado = "";
 				boolean empiezo = false;
 				for(int i = 0; i < lSep.length; i++) {
 					if(empiezo) {
@@ -23,19 +22,16 @@ public class Ejercicio3 {
 								equalsIgnoreCase("\"") &&
 								Character.toString(lSep[i+1].charAt(0)).equalsIgnoreCase("\"")) {
 							
-						}
-					} else if(!lSep[i].equals("") && !Character.toString(lSep[i].charAt(lSep[i].length() - 1)).
+						} else if(!lSep[i].equals("") && !Character.toString(lSep[i].charAt(lSep[i].length() - 1)).
 								equalsIgnoreCase("\"") &&
 								Character.toString(lSep[i+2].charAt(0)).equalsIgnoreCase("\"")) {
-						} else {
-							l.add(lSep[i]);
-							
+						}
+					} else {
+						empiezo = true;	
 						}
 					}
-					System.out.println(lSep[i]);
-				}
-			}
 
+	}
 			f.close();
 		} catch(FileNotFoundException e) {
 			System.out.println("El fichero " + nombre + " no ha podido ser abierto.");

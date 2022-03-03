@@ -6,6 +6,11 @@ import java.util.Scanner;
 
 public class Ejercicio2 {
 
+	/**
+	 * Pre:  ---
+	 * Post: Metodo que cuenta las palabras con la longitud superior o igual a la que el usuario
+	 * ha introduccido en el metodo main
+	 */
 	public static void palabrasMasLargasQue(String nombre, int l) {
 		File file = new File(nombre);
 		try {
@@ -39,6 +44,11 @@ public class Ejercicio2 {
 			System.out.println("El fichero " + nombre + " no ha podido ser abierto.");
 		}
 	}
+	
+	/**
+	 * Pre:  ---
+	 * Post: Metodo que solicita al usuario el archivo el cual se desea contar las palabras
+	 */
 	
 	public static void main(String[] args) {
 		Scanner entrada = new Scanner(System.in);
